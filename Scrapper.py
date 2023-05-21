@@ -32,6 +32,7 @@ updates = []
 for row in rows[1:]:
     data = row.find_all('td')
     card_name = data[0].text
+    print(card_name)
     try:
         sell_price = float(data[4].text.replace("$", ""))
     except ValueError:
@@ -59,5 +60,8 @@ for row in rows[1:]:
         updates.append(Cell(row=row_number, col=4, value=sell_price))
 
 # Apply all updates at once
-print("Applying updates...")
-sheet.update_cells(updates)
+if updates:
+    print("Applying updates...")
+    sheet.update_cells(updates)
+else:
+    print("No updates to apply.")

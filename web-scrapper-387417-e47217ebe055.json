@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "web-scrapper-387417",
+  "private_key_id": "e47217ebe055bafadb9595298072bb9bb5cffcb4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCnFoKkoROhvdcf\nvVn6dfzJ2D8JP32q2FvD93V6UbFYcruKsM9+KsOO+vHLOUZt2NZXYapZIkXqfe2X\nfjr32LrC5eGq0qUKR3CfOO8IQBAUTgURjsO228kOOnAuUAkyvz1/sC3Q5Y+W2I+J\nh2UFa8ymzggD39jVVGLUg8ytnnNrs0/vEtimveLEXyAyah958MqCiWu+OS7vgf0b\nDXJCJigsk6rQr6FET6okAYuehLV/+azu4Z4rd9vPtQEuILg6De3hgMcGW14ltlj9\nc9a3glU3vrSGRruSVP/j0WpVX/+2TJ2oA93Yfl+06cu1OAAyMhhBy7JI/lqNIlnI\nFMqWBwztAgMBAAECggEAGdymQv9lj6rXzHiyn82PCi+XmNcEHKNZbMx1brCMqnve\nYwSj+8t4XRNNb/RWXjPqVThviqqp4guKG2E1P7MtkR4jdEfKC3xsRlDPJVqZF94i\n8wlDFMoRuss5HYn+Knsm9IfF8lKd4NjLOsZt+01TWLGE1Giw4gV/jeo1ON2mJXyp\nrFNsPfo9dNwnzSmaddE96O3B5nurjRbJYKzWPNx017xqU0HkBWXuEpK6+oepjjtt\nTY420d4UnRBG8E6/zciY+sLUq7rywwIzucTM+iABJCgjCuJE3eaWUZ3au5IY7juq\nIiem2gQOcXvSb5X7p77Hj4Xa5i3TbI1UR8FwwX+2RwKBgQDbfCBSMExbTloFMafE\n1l1crpiBc24Kzqx76cyvu3WU5T8TMJHQ7wDEY04AFme6ciP41Mrk2Kr02z96NCoP\nBnzdOYsUEwqozQyDfuv/xWebS7AYC3LWedfkG/5FY0blrCBMo4S/m7lBPMGu+R5Q\nkyGbjcwCxfDjrOdWbaizdd3gHwKBgQDC4sucvbWCyiYdmTshjgsrLlpGjopdgruB\n1j9Crcoin8rRVXw0r2ODPF0LPKwJ6J+NbCRrC2pz/QEsBjlVlPz6853fKxlCOGyO\niojL8KdbYmhMbW+STBMF/vJKZBGGwJ8k3ra5Nq+dKY7IWlrxXcyHXMGuI81tU6ds\nQuVQ5hzBcwKBgQDAN5XKxNeqQxUdZV5LSX0cNSAEhsXBmzx9jMUgxeh0zMwPj0K0\nmwut8lYWR4jyRRHx0tIZ1xLpO7X83QBUhlcGG2YM35w/NsyVwKsIJabV31RJyoT5\nBl4nPMjTld06OSNUWwRgFg4I7x+kkDGXWTNemrEnYJjVm9BB5emPuVLl+wKBgQCE\nuWKD7+tjFHsa41WTB6LxmJLgxIjVIIjE5v2UUrl8FSlSoY6CbwQtx3lygrKD2Qp4\njTLMOC0aqy8WJXL8pwgXfLyC1V5RbA36kbySb+X6Za20hz9Z+jdmePfX1AjfpeV8\nfbUhtG2rcjcMmgSfpwr5ESHSkA2CrFs0buavzte8owKBgHgOk2N186GESP+yI830\nv6UIcyBbyirWKIZdDSNl8jrN1wcmy6luKOfL2a/ecxLctKSu4PZ2KZvXTha3VMUb\nmKS2Et5iMED9l5aYKF4DR5aOhw9TXq0mZOzmLuDf83vNh6DJnu+ruH2HKNa8zjHW\nikSrwveqg6AwTUMwtWUOyotp\n-----END PRIVATE KEY-----\n",
+  "client_email": "python-web-scrapper@web-scrapper-387417.iam.gserviceaccount.com",
+  "client_id": "112767965377176047535",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/python-web-scrapper%40web-scrapper-387417.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

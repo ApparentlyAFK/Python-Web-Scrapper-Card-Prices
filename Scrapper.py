@@ -8,7 +8,7 @@ from google.oauth2.service_account import Credentials
 
 # Setup Google Sheets API
 scope = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
-creds = Credentials.from_service_account_file('python-web-scrapper@web-scrapper-387417.iam.gserviceaccount.com', scopes=scope)
+creds = Credentials.from_service_account_file('/Users/mr.lu/repos/Python-Web-Scrapper-Card-Prices/web-scrapper-387417-e47217ebe055.json', scopes=scope)
 
 gc = gspread.authorize(creds)
 sheet = gc.open("your_google_sheet_name").sheet1

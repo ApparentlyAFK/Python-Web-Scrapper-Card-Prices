@@ -30,7 +30,7 @@ rows = soup.find_all('tr')
 all_data = sheet.get_all_values()
 
 # Convert it to a dictionary with card names as keys and row numbers as values
-data_dict = {row[0]: i+1 for i, row in enumerate(all_data)}
+data_dict = {normalize_card_name(row[0]): i+1 for i, row in enumerate(all_data)}
 
 # Batch requests
 updates = []
@@ -48,16 +48,7 @@ for row in rows[1:]:
     sell_price = math.ceil(sell_price / 0.25) * 0.25
 
     # Normalize card name
-    if '-' in card_name:
-        card_name_parts = card_name.split('-')
-        card_name = card_name_parts[0].strip() + " (" + card_name_parts[1].strip() + ")"
-
-        if len(card_name_parts) > 2:
-            for extra in card_name_parts[2:]:
-                if 'Parallel' in extra:
-                    card_name += " (Parallel)"
-                elif 'Box Topper' in extra:
-                    card_name += " (Box Topper)"
+    card_name = normalize_card_name(card_name)
 
     print(f"Searching for {card_name} in Google Sheet...")
 

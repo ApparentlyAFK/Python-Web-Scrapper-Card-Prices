@@ -23,7 +23,10 @@ rows = soup.find_all('tr')
 for row in rows[1:]:
     data = row.find_all('td')
     card_name = data[0].text
-    sell_price = float(data[4].text.replace("$", ""))
+    try:
+        sell_price = float(data[4].text.replace("$", ""))
+    except ValueError:
+        continue
 
     # Round up card price
     sell_price = math.ceil(sell_price / 0.25) * 0.25

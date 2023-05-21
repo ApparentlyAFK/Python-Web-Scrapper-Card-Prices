@@ -28,6 +28,17 @@ for row in rows[1:]:
     # Round up card price
     sell_price = math.ceil(sell_price / 0.25) * 0.25
 
+    # Normalize card name
+    if '-' in card_name:
+        card_name_parts = card_name.split('-')
+        card_name = card_name_parts[0].strip() + " (" + card_name_parts[1].strip() + ")"
+
+        if 'Parallel' in card_name_parts[-1]:
+            card_name += " (Parallel)"
+        elif 'Box Topper' in card_name_parts[-1]:
+            card_name += " (Box Topper)"
+    
     # Find the card in the Google Sheet and update the sell price
-    cell = sheet.find(card_name)
-    sheet.update_cell(cell.row, 'column_number_of_sell_price', sell_price)
+    cell = sheet.findall(card_name)
+    for c in cell:
+        sheet.update_cell(c.row, 4, sell_price)

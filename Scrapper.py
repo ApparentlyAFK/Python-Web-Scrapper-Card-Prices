@@ -11,7 +11,7 @@ scope = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis
 creds = Credentials.from_service_account_file('/Users/mr.lu/repos/Python-Web-Scrapper-Card-Prices/web-scrapper-387417-e47217ebe055.json', scopes=scope)
 
 gc = gspread.authorize(creds)
-sheet = gc.open("your_google_sheet_name").sheet1
+sheet = gc.open("OP-01: Romance Dawn").sheet1
 
 
 # Fetch card prices from TCGPlayer

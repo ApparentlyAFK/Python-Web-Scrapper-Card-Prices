@@ -40,8 +40,11 @@ for row in rows[1:]:
             card_name += " (Parallel)"
         elif 'Box Topper' in card_name_parts[-1]:
             card_name += " (Box Topper)"
-    
+
+    print(f"Searching for {card_name} in Google Sheet...")
+
     # Find the card in the Google Sheet and update the sell price
     cell = sheet.findall(card_name)
     for c in cell:
+        print(f"Updating sell price for {card_name} in row {cell.row}...")
         sheet.update_cell(c.row, 4, sell_price)

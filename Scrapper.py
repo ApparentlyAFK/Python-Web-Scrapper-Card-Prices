@@ -20,6 +20,13 @@ response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 rows = soup.find_all('tr')
 
+# Fetch all data from the Google Sheet
+all_data = sheet.get_all_values()
+
+# Convert it to a dictionary with card names as keys and row numbers as values
+data_dict = {row[0]: i+1 for i, row in enumerate(all_data)}
+
+# Batch requests
 updates = []
 
 for row in rows[1:]:
@@ -45,11 +52,11 @@ for row in rows[1:]:
 
     print(f"Searching for {card_name} in Google Sheet...")
 
-    # Find the card in the Google Sheet and update the sell price
-    cells = sheet.findall(card_name)
-    for cell in cells:
-        print(f"Adding update for {card_name} in row {cell.row}...")
-        updates.append(Cell(row=cell.row, col=4, value=sell_price))
+    # Find the card in the local data
+    row_number = data_dict.get(card_name)
+    if row_number is not None:
+        print(f"Adding update for {card_name} in row {row_number}...")
+        updates.append(Cell(row=row_number, col=4, value=sell_price))
 
 # Apply all updates at once
 print("Applying updates...")

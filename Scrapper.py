@@ -4,7 +4,13 @@ import gspread
 import math
 from google.auth.transport.requests import Request
 from google.oauth2.service_account import Credentials
+from gspread.models import Cell
 
+# Function to normalize a card name
+def normalize_card_name(name):
+    name = name.lower().strip()
+    name = name.replace('-', ' - ')
+    return name
 
 # Setup Google Sheets API
 scope = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
@@ -46,10 +52,12 @@ for row in rows[1:]:
         card_name_parts = card_name.split('-')
         card_name = card_name_parts[0].strip() + " (" + card_name_parts[1].strip() + ")"
 
-        if 'Parallel' in card_name_parts[-1]:
-            card_name += " (Parallel)"
-        elif 'Box Topper' in card_name_parts[-1]:
-            card_name += " (Box Topper)"
+        if len(card_name_parts) > 2:
+            for extra in card_name_parts[2:]:
+                if 'Parallel' in extra:
+                    card_name += " (Parallel)"
+                elif 'Box Topper' in extra:
+                    card_name += " (Box Topper)"
 
     print(f"Searching for {card_name} in Google Sheet...")
 
@@ -58,6 +66,8 @@ for row in rows[1:]:
     if row_number is not None:
         print(f"Adding update for {card_name} in row {row_number}...")
         updates.append(Cell(row=row_number, col=4, value=sell_price))
+    else:
+        print(f"Card not found in local data: {card_name}")
 
 # Apply all updates at once
 if updates:

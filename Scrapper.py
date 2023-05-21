@@ -4,7 +4,7 @@ import gspread
 import math
 from google.auth.transport.requests import Request
 from google.oauth2.service_account import Credentials
-from gspread.models import Cell
+
 
 # Function to normalize a card name
 def normalize_card_name(name):

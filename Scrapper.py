@@ -48,7 +48,7 @@ for row in rows[1:]:
         continue
 
     # Round up card price
-    sell_price = math.ceil(sell_price / 0.25) * 0.25
+    sell_price = round(sell_price / 0.25) * 0.25
 
     # Normalize card name
     card_name = normalize_card_name(card_name)

@@ -10,14 +10,11 @@ from google.oauth2.service_account import Credentials
 def normalize_card_name(name):
     name = name.lower().strip()
     name = name.replace('-', ' - ')
+    name = name.replace('parallel', '(parallel)')
+    name = name.replace('box topper', '(box topper)')
     return name
 
-# Function to check if names match
-def name_matches(name1, name2):
-    name1_words = set(name1.split())
-    name2_words = set(name2.split())
-    return name1_words.issubset(name2_words) or name2_words.issubset(name1_words)
-    
+
 # Setup Google Sheets API
 scope = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
 creds = Credentials.from_service_account_file('/Users/mr.lu/repos/Python-Web-Scrapper-Card-Prices/web-scrapper-387417-e47217ebe055.json', scopes=scope)
